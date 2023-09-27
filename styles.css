@@ -259,16 +259,17 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
     background: transparent;
     color: var(--lils);
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1rem;
     cursor: pointer;
     border: var(--lils) solid 0.1rem;
     border-radius: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     transition: 0.3s ease all;
     z-index: 1;
     position: relative;
     font-family: 'Unbounded', cursive;
+    letter-spacing: 1px;
 }
 #deleteCompletedTasks:before{
     transition: 0.5s all ease;
@@ -338,7 +339,8 @@ color: white;
     padding: 2rem;
     margin: 2rem 0;
     width: 60rem;
-    height: 50%;
+    height: 17rem;
+    display: none;
 }
 #taskInput {
     width: 100%;
@@ -359,10 +361,15 @@ border: none;
 border-radius: 3rem;
 font-size: 1.4rem;
 font-weight: 600;
-padding: 0.8rem 1.2rem;
+padding: 0.8rem 1rem 1rem 1rem;
 float: right;
 cursor: pointer;
 font-family: 'Unbounded', cursive;
+}
+#saveTaskBtn::before{
+    content: '\1F5AC'; 
+    font-size: 1.8rem;
+    padding: 0rem 0.4rem 0rem 0rem;
 }
 #cancelTaskBtn{
 color: #01080E;
@@ -373,6 +380,79 @@ font-weight: 600;
 float: left;
 cursor: pointer;
 font-family: 'Unbounded', cursive;
+}
+#cancelTaskBtn::before{
+    content: '\1F5D1'; 
+    font-size: 2rem;
+}
+
+
+.task-card {
+    border: none;
+    border-radius: 1rem;
+    background: rgba(176, 176, 176, 0.733);
+    padding: 2rem;
+    margin: 2rem 0;
+    width: 60rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.task-input {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: rgba(213, 213, 213, 0.733);
+    font-family: 'Unbounded', cursive;
+    margin: 0rem 1rem;
+    letter-spacing: 1px;
+}
+.delete-button {
+    background-color: #b10b0b;
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-family: 'Unbounded', cursive;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+.delete-button:hover{
+    background-color: #d10d0d;
+}
+.task-checkbox {
+    appearance: none; /* Remove o estilo padrão do checkbox */
+    width: 6rem;
+    height: 4rem;
+    background-color: #ccc; 
+    border: none; 
+    border-radius: 5rem; 
+    position: relative;
+    cursor: pointer;
+}
+.task-checkbox:checked {
+    background-color: #4caf50; 
+}
+
+.task-checkbox:checked::before {
+    content: '\2714'; /* Símbolo de check branco */
+    font-size: 2.8rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.task-card.completed {
+    background-color: #4caf4f9a; 
 }
 
 
@@ -385,7 +465,7 @@ font-family: 'Unbounded', cursive;
 }
 
 /* Para Celulares */
-@media (max-width: 767px) {
+@media (max-width: 720px) {
     .app__section-banner-container {
         width: 32rem;
     }
@@ -396,5 +476,54 @@ font-family: 'Unbounded', cursive;
 
     .app__card-timer {
         font-size: 6rem;
+    }
+}
+@media (max-width: 650px){
+    .card-tarefas{
+        border: none;
+        background: none;
+        width: 70rem;
+        max-width: 100%;
+    }
+    .addTaskBtn-container{
+        display: flex;
+        justify-content: center;
+    }
+    .task-list-container{
+        display: flex;
+        justify-content: center;
+    }
+    #taskInputContainer{
+        margin: 0rem;
+        padding: 1rem;
+    }
+    .task-card{
+        padding: 1rem;
+    }
+    .delete-button {
+        padding: 1.4rem 1rem;
+        font-size: 1.1rem;
+    }
+    .task-input{
+        padding: 1.1rem;
+        font-size: 1.3rem;
+    }
+    .task-checkbox {
+        appearance: none; /* Remove o estilo padrão do checkbox */
+        width: 4rem;
+        height: 2.9rem;
+    }
+    .task-checkbox:checked::before {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px){
+    .task-checkbox {
+        appearance: none; /* Remove o estilo padrão do checkbox */
+        width: 4.9rem;
+        height: 2.8rem;
+    }
+    .task-checkbox:checked::before {
+        font-size: 2rem;
     }
 }

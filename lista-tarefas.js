@@ -17,6 +17,7 @@ function updateTaskList() {
     taskList.innerHTML = "";
     tasks.forEach((task, index) => {
         const taskCard = document.createElement("div");
+        // ...
         taskCard.classList.add("task-card");
         if (task.completed) {
             taskCard.classList.add("completed");
@@ -25,6 +26,7 @@ function updateTaskList() {
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.checked = task.completed;
+        checkbox.classList.add("task-checkbox"); // Adiciona a classe "task-checkbox"
         checkbox.addEventListener("change", () => {
             task.completed = checkbox.checked;
             updateTaskList();
@@ -33,10 +35,11 @@ function updateTaskList() {
         const taskInput = document.createElement("input");
         taskInput.type = "text";
         taskInput.value = task.text;
+        taskInput.classList.add("task-input"); // Adiciona a classe "task-input"
 
         const editButton = document.createElement("span");
         editButton.innerHTML = "&#9998;";
-        editButton.classList.add("edit-button");
+        editButton.classList.add("edit-button"); // Adiciona a classe "edit-button"
         editButton.addEventListener("click", () => {
             taskInput.value = task.text;
             editingTaskIndex = index;
@@ -45,10 +48,13 @@ function updateTaskList() {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Deletar";
+        deleteButton.classList.add("delete-button"); // Adiciona a classe "delete-button"
         deleteButton.addEventListener("click", () => {
             tasks.splice(index, 1);
             updateTaskList();
         });
+        // ...
+
 
         taskInput.addEventListener("blur", () => {
             if (editingTaskIndex !== null) {
@@ -60,7 +66,6 @@ function updateTaskList() {
 
         taskCard.appendChild(checkbox);
         taskCard.appendChild(taskInput);
-        taskCard.appendChild(editButton);
         taskCard.appendChild(deleteButton);
         taskList.appendChild(taskCard);
     });

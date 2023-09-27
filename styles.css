@@ -182,7 +182,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     display: inline-block;
 }
-
 .toggle-switch {
     display: inline-block;
     background: #c8c8c8;
@@ -193,11 +192,9 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: middle;
     transition: background 0.25s;
 }
-
 .toggle-switch:before, .toggle-switch:after {
     content: "";
 }
-
 .toggle-switch:before {
     display: block;
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
@@ -209,25 +206,176 @@ h1, h2, h3, h4, h5, h6 {
     left: 0.4rem;
     transition: left 0.25s;
 }
-
 .toggle:hover .toggle-switch:before {
     background: linear-gradient(to bottom, #fff 0%, #fff 100%);
 }
-
 .toggle-checkbox:checked + .toggle-switch {
     background: var(--lils);
 }
-
 .toggle-checkbox:checked + .toggle-switch:before {
     left: 3rem;
 }
-
 .toggle-checkbox {
     position: absolute;
     visibility: hidden;
 }
-
 /* fim - toggle */
+
+
+/*Card - Tarefas*/
+.container-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    width: 59rem;
+    max-width: 90%;
+    height: 0.1rem;
+    background: var(--azul-royal);
+}
+
+.container-tarefas{
+    display: flex;
+    justify-content: center;
+}
+.card-tarefas{
+    border: none;
+    background: none;
+    padding: 2rem;
+    margin: 2rem 0;
+    width: 60rem;
+    max-width: 90%;
+}
+.primeira-section{
+    display: flex;
+    justify-content: space-between;
+}
+.container-tarefas h2{
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+}
+#deleteCompletedTasks{
+    float: right;
+    background: transparent;
+    color: var(--lils);
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    border: var(--lils) solid 0.1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: 0.3s ease all;
+    z-index: 1;
+    position: relative;
+    font-family: 'Unbounded', cursive;
+}
+#deleteCompletedTasks:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: var(--lils);
+    border-radius: 0.9rem;
+    z-index: -1;
+}
+#deleteCompletedTasks:hover, #deleteCompletedTasks:focus{
+color: white;
+}
+#deleteCompletedTasks:hover:before, #deleteCompletedTasks:focus:before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+#addTaskBtn{
+    margin: 3rem 0rem;
+    padding: 1.6rem 1rem;
+    width: 59rem;
+    background: transparent;
+    color: var(--lils);
+    cursor: pointer;
+    border: var(--lils) solid 0.2rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: 0.3s ease all;
+    z-index: 1;
+    position: relative;
+    font-family: 'Unbounded', cursive;
+}
+#addTaskBtn:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background: var(--linear-botes);
+    border: var(--linear-botes) solid 0.2rem;
+    border-radius: 2.2rem;
+    z-index: -1;
+}
+#addTaskBtn:hover, #addTaskBtn:focus{
+color: white;
+}
+#addTaskBtn:hover:before, #addTaskBtn:focus:before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+#taskInputContainer{
+    border: none;
+    border-radius: 1rem;
+    background: rgba(176, 176, 176, 0.733);
+    padding: 2rem;
+    margin: 2rem 0;
+    width: 60rem;
+    height: 50%;
+}
+#taskInput {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0.2rem 0rem 2rem 0rem;
+    background: rgba(213, 213, 213, 0.733);
+    font-family: 'Unbounded', cursive;
+}
+#saveTaskBtn{
+background: #01080E;
+color: var(--color-secondary);
+border: none;
+border-radius: 3rem;
+font-size: 1.4rem;
+font-weight: 600;
+padding: 0.8rem 1.2rem;
+float: right;
+cursor: pointer;
+font-family: 'Unbounded', cursive;
+}
+#cancelTaskBtn{
+color: #01080E;
+background: transparent;
+border: none;
+font-size: 1.4rem;
+font-weight: 600;
+float: left;
+cursor: pointer;
+font-family: 'Unbounded', cursive;
+}
+
+
 
 /* Para Tablets */
 @media (max-width: 1024px) and (min-width: 768px) {

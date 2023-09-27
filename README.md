@@ -1,4 +1,4 @@
-<p align="center"> <img src="./imagens/logo.png" alt="logo da fokus"> </p>
+<p align="center"> <img src="./imagens/foco.png" alt="logo da fokus"> </p>
 
 <hr>
 
